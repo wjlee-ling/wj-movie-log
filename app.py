@@ -46,7 +46,7 @@ class Comment(db.Model):
     text = db.Column(db.String(50), nullable=False)
 
 ## routing
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
     movies = Movie.query.all()
     return render_template("index.html", movies = movies)

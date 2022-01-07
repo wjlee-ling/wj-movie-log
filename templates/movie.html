@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>{{ movie.title | title}}</h1>
+<div>
+    {% for review in movie.review  %}
+        <h3>별-다섯 평점</h3>
+            <p> {{review.stars}}</p>
+        <h3>한줄 단상</h3>
+            <p> {{review.text}}</p>
+    {% endfor %}
+</div>
+
+<!-- 추후 user_email 추가 필 -->
+<h3>댓글</h3>
+<div>
+    <ul>
+        {% for comment in movie.comments %}
+            <li><p><b>{{comment.commenter}}</b></p>{{comment.text}}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+<form method="POST">
+    {{ template_form.hidden_tag() }}
+
+    <p>
+        {{template_form.user_name.label}}
+        {{template_form.user_name(size=48)}}
+    </p>
+    <p>
+        {{template_form.comment.label}}
+        {{template_form.comment(size=48)}}
+    </p>  
+    <p> {{ template_form.submit() }}</p>
+</form>
+{% endblock %}

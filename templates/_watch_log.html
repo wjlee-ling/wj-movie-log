@@ -1,0 +1,8 @@
+<table>
+    <tr>
+        <td>
+            <a href="{{ url_for('movie', id=movie.id) }}"><b>{{movie.title|title}}</b></a> 
+            directed by {{movie.director|title}} @ {{watch_log.where}}, {{watch_log.when}}
+        </td>
+    </tr>
+</table>

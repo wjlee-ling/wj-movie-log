@@ -8,10 +8,11 @@ User class, Admin instance 추가
 
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+from secret import Secret
 from forms import CommentForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] =  'eyf4-DEN34-3v!dD' 
+app.config['SECRET_KEY'] =  Secret.secret_key
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///movie_log.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False #to supress warning
 

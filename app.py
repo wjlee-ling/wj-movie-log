@@ -1,5 +1,5 @@
 """
-ver: 1.1 왜 안돼
+ver: 1.1
 to-do:
 User class, Admin instance 추가
 1. Movie -> add : poster col 
